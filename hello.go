@@ -9,8 +9,14 @@ Packages are ways of grouping up related Go code together.
 // Importing a package which contains the Println function
 import "fmt"
 
+const englishHelloPrefix = "Hello, "
+
 func Hello(name string) string {
-	return "Hello, " + name
+	if name == "" {
+		name = "World"
+	}
+
+	return englishHelloPrefix + name
 }
 
 func main() {
